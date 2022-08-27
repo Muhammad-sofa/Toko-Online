@@ -59,5 +59,18 @@
                margin-left: 0;
                margin-top: 0px;
           }
+
+          #page-content-wrapper {
+               min-width: 0;
+               width: 100%;
+          }
+
+          #wrapper {
+               &.toggled {
+                    #sidebar-wrapper {
+                         margin-left: -15rem;
+                    }
+               }
+          }
      }
 }
