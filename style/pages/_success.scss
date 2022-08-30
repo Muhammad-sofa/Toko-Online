@@ -5,13 +5,18 @@
   .section-success {
     h2 {
       font-size: 28px;
-      font-weight: 200;
       color: #0c0d36;
+      font-weight: 200;
       margin-top: 0;
     }
 
+    .form-control {
+      background: #f3f3f3;
+      border-radius: 8px;
+    }
+
     .btn-signup {
-      @include button-variant(#f3f3f3, transparant);
+      @include button-variant(#f3f3f3, transparent);
       color: #bbbbbb;
     }
   }

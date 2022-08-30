@@ -16,97 +16,143 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light navbar-store fixed-top navbar-fixed-top"
-    data-aos="fade-down">
-    <div class="container">
-      <a href="/index.html" class="navbar-brand">
-        <img src="/images/logo.svg" alt="logo">
-      </a>
-      <button class="navbar-toggler" type="button" data-toggler="collapse" data-target="#navbarResponsive">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a href="/index.html" class="nav-link">Home</a>
-          </li>
-          <li class="nav-item">
-            <a href="/categories.html" class="nav-link">Categories</a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">Rewards</a>
-          </li>
-        </ul>
-                  <!-- Desktop Menu -->
+    <!-- Navigation -->
+    <nav
+      class="navbar navbar-expand-lg navbar-light navbar-store fixed-top navbar-fixed-top"
+      data-aos="fade-down"
+      aria-label="Navbar"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="/">
+          <img src="/images/logo.svg" alt="" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/categories.html">Categories</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Rewards</a>
+            </li>
+          </ul>
+
+          <!-- Desktop Menu -->
           <ul class="navbar-nav d-none d-lg-flex">
             <li class="nav-item dropdown">
-              <a href="#" class="nav-link" id="navbarDropdown" role="button" data-toggle="dropdown">
-                <img src="/images/icon-user.png" alt="" class="rounded-circle mr-2 profile-picture">
+              <a
+                class="nav-link"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <img
+                  src="/images/icon-user.png"
+                  alt=""
+                  class="rounded-circle mr-2 profile-picture"
+                />
                 Hi, Sofa
               </a>
-              <div class="dropdown-menu">
-                <a href="/dashboard.html" class="dropdown-item">Dashboard</a>
-                <a href="/dashboard-account.html" class="dropdown-item">Settings</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/dashboard.html">Dashboard</a>
+                <a class="dropdown-item" href="/dashboard-account.html"
+                  >Settings</a
+                >
                 <div class="dropdown-divider"></div>
-                <a href="/" class="dropdown-item">Logout</a>
+                <a class="dropdown-item" href="/">Logout</a>
               </div>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link d-inline-block mt-2">
-                <img src="/images/icon-cart-empty.svg" alt="">
+              <a class="nav-link d-inline-block mt-2" href="#">
+                <img src="/images/icon-cart-empty.svg" alt="" />
               </a>
             </li>
           </ul>
 
-                    <!-- Mobile Menu -->
+          <!-- Mobile Menu -->
           <ul class="navbar-nav d-block d-lg-none">
             <li class="nav-item">
-              <a href="#" class="nav-link">
+              <a class="nav-link" href="#">
                 Hi, Sofa
               </a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link d-inline-block">
+              <a class="nav-link d-inline-block" href="#">
                 Cart
               </a>
             </li>
           </ul>
+        </div>
       </div>
-    </div>
     </nav>
 
-    <!--Page Content-->
+    <!-- Page Content -->
     <div class="page-content page-details">
-      <section class="store-breadcrumbs" data-aos="fade-down" data-aos-delay="100">
+      <section
+        class="store-breadcrumbs"
+        data-aos="fade-down"
+        data-aos-delay="100"
+      >
         <div class="container">
           <div class="row">
             <div class="col-12">
-              <ol class="breadcrumb">
-                <li class="breadcrumb-item">
-                  <a href="/index.html">Home</a>
-                </li>
-                <li class="breadcrumb-item active">
-                  Product Details
-                </li>
-              </ol>
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="/">Home</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">
+                    Product Details
+                  </li>
+                </ol>
+              </nav>
             </div>
           </div>
         </div>
       </section>
-
       <section class="store-gallery" id="gallery">
         <div class="container">
           <div class="row">
             <div class="col-lg-8" data-aos="zoom-in">
               <transition name="slide-fade" mode="out-in">
-                <img :src="photos[activePhoto].url" :key="photos[activePhoto].id" class="w-100 main-image" alt="">
+                <img
+                  :key="photos[activePhoto].id"
+                  :src="photos[activePhoto].url"
+                  class="w-100 main-image"
+                  alt=""
+                />
               </transition>
             </div>
             <div class="col-lg-2">
               <div class="row">
-                <div class="col-3 col-lg-12 mt-2 mt-lg-0" v-for="(photo, index) in photos" :key="photo.id" data-aos="zoom-in" data-aos-delay="100">
+                <div
+                  class="col-3 col-lg-12 mt-2 mt-lg-0"
+                  v-for="(photo, index) in photos"
+                  :key="photo.id"
+                  data-aos="zoom-in"
+                  data-aos-delay="100"
+                >
                   <a href="#" @click="changeActive(index)">
-                    <img :src="photo.url" class="w-100 thumbnail-image" :class="{ active: index == activephoto }" alt="">
+                    <img
+                      :src="photo.url"
+                      class="w-100 thumbnail-image"
+                      :class="{ active: index == activePhoto }"
+                      alt=""
+                    />
                   </a>
                 </div>
               </div>
@@ -114,52 +160,47 @@
           </div>
         </div>
       </section>
-
       <div class="store-details-container" data-aos="fade-up">
-        <!--Heading-->
         <section class="store-heading">
           <div class="container">
             <div class="row">
               <div class="col-lg-8">
                 <h1>Sofa Ternyaman</h1>
-                <div class="owner">By Muhammad Sofa Yuliansyah</div>
-                <div class="price">$1,500</div>
+                <div class="owner">By Galih Pratama</div>
+                <div class="price">$1,409</div>
               </div>
-              <div class="col-lg-2 data-aos="zoom-in">
-                <a href="/cart.html" class="btn btn-success px-4 text-white btn-block mb-3">
-                  Add to Cart
-                </a>
+              <div class="col-lg-2" data-aos="zoom-in">
+                <a
+                  class="btn btn-success nav-link px-4 text-white btn-block mb-3"
+                  href="/cart.html"
+                  >Add to Cart</a
+                >
               </div>
             </div>
           </div>
         </section>
-
-        <!--Description-->
         <section class="store-description">
           <div class="container">
             <div class="row">
               <div class="col-12 col-lg-8">
                 <p>
-                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                  Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-                  when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
-                  It has survived not only five centuries, but also the leap into electronic typesetting, 
-                  remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
-                  and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                  The Nike Air Max 720 SE goes bigger than ever before with
+                  Nike's tallest Air unit yet for unimaginable, all-day comfort.
+                  There's super breathable fabrics on the upper, while colours
+                  add a modern edge.
                 </p>
                 <p>
-                  It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. 
-                  The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 
-                  'Content here, content here', making it look like readable English. Many desktop publishing packages and web page 
-                  editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. 
-                  Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+                  Bring the past into the future with the Nike Air Max 2090, a
+                  bold look inspired by the DNA of the iconic Air Max 90.
+                  Brand-new Nike Air cushioning underfoot adds unparalleled
+                  comfort while transparent mesh and vibrantly coloured details
+                  on the upper are blended with timeless OG features for an
+                  edgy, modernised look.
                 </p>
               </div>
             </div>
           </div>
         </section>
-
-        <!--Customer Review-->
         <section class="store-review">
           <div class="container">
             <div class="row">
@@ -171,24 +212,42 @@
               <div class="col-12 col-lg-8">
                 <ul class="list-unstyled">
                   <li class="media">
-                    <img src="/images/icons-testimonial-1.png" alt="" class="mr-3 rounded-circle">
+                    <img
+                      src="/images/icon-testimonial-1.png"
+                      class="mr-3 rounded-circle"
+                      alt=""
+                    />
                     <div class="media-body">
                       <h5 class="mt-2 mb-1">Hazza Risky</h5>
-                      I thought it was not good for living room. I really happy to decided buy this product last week now  feels like homey. 
+                      I thought it was not good for living room. I really happy
+                      to decided buy this product last week now feels like
+                      homey.
                     </div>
                   </li>
-                  <li class="media">
-                    <img src="/images/icons-testimonial-2.png" alt="" class="mr-3 rounded-circle">
+                  <li class="media my-4">
+                    <img
+                      src="/images/icon-testimonial-2.png"
+                      class="mr-3 rounded-circle"
+                      alt=""
+                    />
                     <div class="media-body">
                       <h5 class="mt-2 mb-1">Anna Sukkirata</h5>
-                      I thought it was not good for living room. I really happy to decided buy this product last week now  feels like homey. 
+                      Color is great with the minimalist concept. Even I thought
+                      it was made by Cactus industry. I do really satisfied with
+                      this.
                     </div>
                   </li>
                   <li class="media">
-                    <img src="/images/icons-testimonial-3.png" alt="" class="mr-3 rounded-circle">
+                    <img
+                      src="/images/icon-testimonial-3.png"
+                      class="mr-3 rounded-circle"
+                      alt=""
+                    />
                     <div class="media-body">
-                      <h5 class="mt-2 mb-1">Rian Kumala</h5>
-                      I thought it was not good for living room. I really happy to decided buy this product last week now  feels like homey. 
+                      <h5 class="mt-2 mb-1">Dakimu Wangi</h5>
+                      When I saw at first, it was really awesome to have with.
+                      Just let me know if there is another upcoming product like
+                      this.
                     </div>
                   </li>
                 </ul>
@@ -204,14 +263,12 @@
         <div class="row">
           <div class="col-12 text-center">
             <p class="pt-4 pb-2">
-              2022 Copyright Store . All Rights Reserved.
+              2019 Copyright Store. All Rights Reserved.
             </p>
           </div>
         </div>
       </div>
     </footer>
-
-    <!-- Store New Product -->
 
     <!-- Bootstrap core JavaScript -->
     <script src="/vendor/jquery/jquery.slim.min.js"></script>
@@ -224,36 +281,35 @@
     <script>
       var gallery = new Vue({
         el: "#gallery",
-        //script yang akan dijalankan saat muncul
-        mounted(){
+        mounted() {
           AOS.init();
         },
         data: {
-          activePhoto: 0,
+          activePhoto: 3,
           photos: [
             {
               id: 1,
-              url: "/images/product-details-1.jpg"
+              url: "/images/product-details-1.jpg",
             },
             {
               id: 2,
-              url: "/images/product-details-2.jpg"
+              url: "/images/product-details-2.jpg",
             },
             {
               id: 3,
-              url: "/images/product-details-3.jpg"
+              url: "/images/product-details-3.jpg",
             },
             {
               id: 4,
-              url: "/images/product-details-4.jpg"
+              url: "/images/product-details-4.jpg",
             },
           ],
         },
         methods: {
           changeActive(id) {
             this.activePhoto = id;
-          }
-        }
+          },
+        },
       });
     </script>
     <script src="/script/navbar-scroll.js"></script>
